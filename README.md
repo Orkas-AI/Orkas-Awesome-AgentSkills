@@ -522,13 +522,3 @@ Current catalog: 26 agents and 45 skills.
     </tr>
   </tbody>
 </table>
-
-## General
-
-### Agents
-
-<p><em>None yet.</em></p>
-
-### Skills
-
-<p><em>None yet.</em></p>

@@ -522,13 +522,3 @@ Orkas 开源版本：https://github.com/Orkas-AI/Orkas
     </tr>
   </tbody>
 </table>
-
-## 通用
-
-### Agents
-
-<p><em>暂无。</em></p>
-
-### Skills
-
-<p><em>暂无。</em></p>
