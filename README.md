@@ -6,7 +6,7 @@ This project is a collection of high-quality Orkas agents and skills, continuous
 
 **Note:** Skills can be used both inside and outside Orkas. Agents can run directly in Orkas with their intended runtime, tools, and routing behavior; outside Orkas, their definitions can still be used as prompt references or adapted to other agent frameworks.
 
-Orkas homepage: https://orkas.ai/
+Orkas homepage: https://orkas.ai<br>
 Orkas open-source version: https://github.com/Orkas-AI/Orkas
 
 Current catalog: 26 agents and 45 skills.
