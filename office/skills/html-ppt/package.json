@@ -1,0 +1,26 @@
+{
+  "name": "html-ppt",
+  "version": "0.1.0",
+  "description": "Convert structured HTML slides into editable PPTX with preset-driven semantic mapping.",
+  "main": "index.js",
+  "scripts": {
+    "check-env": "node scripts/check_env.js",
+    "convert": "node scripts/html_to_pptx.js",
+    "qa": "node scripts/preflight_qa.js",
+    "test": "npm run check-env"
+  },
+  "keywords": [
+    "pptx",
+    "html",
+    "slides",
+    "powerpoint"
+  ],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "pptxgenjs": "^4.0.1"
+  }
+}
