@@ -14,6 +14,7 @@ Per-platform options:
   --xhs-publish-time {一天内|一周内|半年内|不限}        default 半年内 (last 6 months)
   --xhs-sort {最新|最热}                                default 最新 (newest)
   --twitter-count N                                     default 30
+  --twitter-backend {xreach|xquik}                      default xreach
   --reddit-time {day|week|month|year|all}               default month
   --reddit-sort {new|top|hot|relevance|comments}        default new
   --bilibili-sort {pubdate|totalrank|click|dm|stow}     default pubdate
@@ -53,6 +54,7 @@ def main(argv):
     p.add_argument('--xhs-sort', default='最新')
     # twitter
     p.add_argument('--twitter-count', type=int, default=30)
+    p.add_argument('--twitter-backend', choices=['xreach', 'xquik'], default='xreach')
     # reddit
     p.add_argument('--reddit-time', default='month')
     p.add_argument('--reddit-sort', default='new')
@@ -71,6 +73,7 @@ def main(argv):
         'xhs_publish_time': args.xhs_publish_time,
         'xhs_sort': args.xhs_sort,
         'twitter_count': args.twitter_count,
+        'twitter_backend': args.twitter_backend,
         'reddit_time': args.reddit_time,
         'reddit_sort': args.reddit_sort,
         'bilibili_sort': args.bilibili_sort,

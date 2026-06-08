@@ -7,7 +7,7 @@ Use fetch mode to collect public social discussion samples for a specific platfo
 | Platform | Script value | Notes |
 |---|---|---|
 | Xiaohongshu | `xhs` | Requires local proxy service at `http://localhost:18060` |
-| X / Twitter | `twitter` | Requires `xreach` CLI |
+| X / Twitter | `twitter` | Defaults to `xreach`; can use Xquik when `XQUIK_API_KEY` is set |
 | Reddit | `reddit` | Uses public JSON endpoints; cookies from browser can improve recall |
 | YouTube | `youtube` | Uses `yt-dlp` |
 | Bilibili | `bilibili` | Public recall improves with browser cookies |
@@ -31,6 +31,7 @@ Platform options:
 | Xiaohongshu | `--xhs-publish-time` | `一天内`, `一周内`, `半年内`, `不限` |
 | Xiaohongshu | `--xhs-sort` | `最新`, `最热` |
 | Twitter/X | `--twitter-count` | 1-100 |
+| Twitter/X | `--twitter-backend` | `xreach`, `xquik` |
 | Reddit | `--reddit-time` | `day`, `week`, `month`, `year`, `all` |
 | Reddit | `--reddit-sort` | `new`, `top`, `hot`, `relevance`, `comments` |
 | Bilibili | `--bilibili-sort` | `pubdate`, `totalrank`, `click`, `dm`, `stow` |
@@ -95,6 +96,6 @@ Common item fields:
 
 - Common Python packages: `requests`, optional `browser_cookie3`, optional `curl_cffi`.
 - Xiaohongshu: external local proxy service `xiaohongshu-mcp`.
-- Twitter/X: `xreach` CLI.
+- Twitter/X: `xreach` CLI by default, or Xquik REST API with `XQUIK_API_KEY`.
 - YouTube: `yt-dlp` CLI or Python module.
 - Reddit/Bilibili: browser cookies can improve recall; otherwise anonymous fetch may be limited.

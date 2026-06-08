@@ -3,6 +3,7 @@
 
 Self-contained: depends only on `requests` and (optionally) `browser_cookie3`
 plus external CLIs (`xreach`, `yt-dlp`) and the local Xiaohongshu proxy.
+Xquik can be selected as an optional Twitter/X backend with XQUIK_API_KEY.
 """
 import hashlib, json, os, re, shutil, subprocess, sys, time, urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -27,6 +28,7 @@ XHS_REQUEST_TIMEOUT = 70   # Slightly above the server's internal 60s timeout, s
 XHS_DETAIL_WORKERS = 4     # Number of threads used to fetch detail concurrently
 DEFAULT_YOUTUBE_META_COUNT = 8
 DEFAULT_YOUTUBE_META_WORKERS = 4
+XQUIK_DEFAULT_BASE_URL = 'https://xquik.com/api/v1'
 
 # Browsers that browser_cookie3 can read from. Order = priority — first browser
 # that yields cookies for the requested domain wins. Override with the
@@ -147,6 +149,82 @@ def add_diag(diag, **kwargs):
 
 def xreach_cmd(keyword, count=30):
     return ['xreach', 'search', keyword, '--json', '-n', str(count)]
+
+
+def xquik_base_url():
+    return os.environ.get('XQUIK_BASE_URL', XQUIK_DEFAULT_BASE_URL).rstrip('/')
+
+
+def xquik_search(keyword, count=30):
+    api_key = os.environ.get('XQUIK_API_KEY', '').strip()
+    if not api_key:
+        raise RuntimeError('XQUIK_API_KEY is required when twitter_backend=xquik')
+
+    response = requests.get(
+        f'{xquik_base_url()}/x/tweets/search',
+        headers={
+            'x-api-key': api_key,
+            'xquik-api-contract': '2026-04-29',
+            'user-agent': 'orkas-social-data/1.0',
+        },
+        params={'q': keyword, 'limit': max(1, min(100, int(count)))},
+        timeout=90,
+    )
+    response.raise_for_status()
+    body = response.json()
+    if isinstance(body, list):
+        return body
+    tweets = body.get('tweets')
+    if isinstance(tweets, list):
+        return tweets
+    data = body.get('data')
+    if isinstance(data, dict) and isinstance(data.get('tweets'), list):
+        return data['tweets']
+    if isinstance(data, dict) and isinstance(data.get('items'), list):
+        return data['items']
+    if isinstance(body.get('items'), list):
+        return body['items']
+    return []
+
+
+def _first_text(*values):
+    for value in values:
+        if isinstance(value, str) and value:
+            return value
+    return ''
+
+
+def _tweet_author(item):
+    user = item.get('user')
+    if isinstance(user, dict):
+        return _first_text(user.get('username'), user.get('screen_name'), user.get('name'))
+    author = item.get('author')
+    if isinstance(author, dict):
+        return _first_text(author.get('username'), author.get('screen_name'), author.get('name'))
+    return _first_text(item.get('username'), item.get('screen_name'), item.get('author'))
+
+
+def _normalize_tweet_item(item, keyword):
+    if not isinstance(item, dict):
+        return None
+    tid = _first_text(str(item.get('id') or ''), str(item.get('tweet_id') or ''))
+    if not tid:
+        return None
+    return {
+        'platform': 'Twitter/X',
+        'id': tid,
+        'url': _first_text(item.get('url'), f'https://x.com/i/web/status/{tid}'),
+        'title': '',
+        'author': _tweet_author(item),
+        'likes': to_int(item.get('likes', item.get('like_count', 0))),
+        'collects': 0,
+        'comments': to_int(item.get('replies', item.get('reply_count', 0))),
+        'retweets': to_int(item.get('retweets', item.get('retweet_count', 0))),
+        'views': to_int(item.get('views', item.get('view_count', 0))),
+        'keyword_hit': keyword,
+        'content': _first_text(item.get('text'), item.get('full_text'), item.get('content')),
+        'comments_list': [],
+    }
 
 
 def yt_dlp_cmd(*args):
@@ -348,35 +426,35 @@ def fetch_twitter(config):
     diag = make_diag('Twitter/X')
     seen, tweets = set(), []
     twitter_count = max(1, min(100, int(config.get('twitter_count', 30))))
+    twitter_backend = config.get('twitter_backend', 'xreach')
     for kw in config['twitter_keywords']:
         log(f'  → {kw}')
         try:
-            result = subprocess.run(xreach_cmd(kw, twitter_count), capture_output=True, text=True, timeout=90)
-            if result.returncode == 0 and result.stdout.strip():
-                items = json.loads(result.stdout).get('items', [])
-                add_diag(diag, raw_hits=diag['raw_hits'] + len(items), detail={'keyword': kw, 'raw_hits': len(items)})
-                log(f'    {len(items)} items')
-                for item in items:
-                    tid = item.get('id', '')
-                    if not tid or tid in seen:
-                        continue
-                    seen.add(tid)
-                    tweets.append({
-                        'platform': 'Twitter/X', 'id': tid, 'url': f'https://x.com/i/web/status/{tid}',
-                        'title': '', 'author': item.get('username', ''),
-                        'likes': to_int(item.get('likes', 0)), 'collects': 0,
-                        'comments': to_int(item.get('replies', 0)), 'retweets': to_int(item.get('retweets', 0)),
-                        'views': to_int(item.get('views', 0)), 'keyword_hit': kw,
-                        'content': (item.get('text') or ''), 'comments_list': [],
-                    })
+            if twitter_backend == 'xquik':
+                items = xquik_search(kw, twitter_count)
             else:
-                err = (result.stderr or result.stdout or '').strip()[:200]
-                add_diag(diag, failed=diag['failed'] + 1, errors=f"{kw}: {err or 'xreach returned empty'}")
-                log('    xreach returned empty or error')
+                result = subprocess.run(xreach_cmd(kw, twitter_count), capture_output=True, text=True, timeout=90)
+                if result.returncode == 0 and result.stdout.strip():
+                    items = json.loads(result.stdout).get('items', [])
+                else:
+                    err = (result.stderr or result.stdout or '').strip()[:200]
+                    add_diag(diag, failed=diag['failed'] + 1, errors=f"{kw}: {err or 'xreach returned empty'}")
+                    log('    xreach returned empty or error')
+                    continue
+            add_diag(diag, raw_hits=diag['raw_hits'] + len(items), detail={'keyword': kw, 'raw_hits': len(items), 'backend': twitter_backend})
+            log(f'    {len(items)} items')
+            for item in items:
+                normalized = _normalize_tweet_item(item, kw)
+                if normalized is None or normalized['id'] in seen:
+                    continue
+                seen.add(normalized['id'])
+                tweets.append(normalized)
         except subprocess.TimeoutExpired:
             add_diag(diag, failed=diag['failed'] + 1, errors=f'{kw}: timeout')
             log('    timeout')
         except Exception as e:
+            if twitter_backend == 'xquik':
+                add_diag(diag, status='error', reason='xquik_backend_error')
             add_diag(diag, failed=diag['failed'] + 1, errors=f'{kw}: {e}')
             log(f'    failed: {e}')
         time.sleep(2)
@@ -384,13 +462,16 @@ def fetch_twitter(config):
     tweets.sort(key=lambda x: (-x.get('comments', 0), -x.get('likes', 0)))
     max_detail = max(1, int(config.get('max_detail') or 30))
 
-    log(f'  📥 Fetching {min(len(tweets), max_detail)} tweet replies...')
-    for t in tweets[:max_detail]:
-        try:
-            t['comments_list'] = _twitter_fetch_comments(t['url'])
-        except Exception as e:
-            add_diag(diag, failed=diag['failed'] + 1, errors=f"thread:{t.get('id','')}: {e}")
-        time.sleep(2)
+    if twitter_backend == 'xreach':
+        log(f'  📥 Fetching {min(len(tweets), max_detail)} tweet replies...')
+        for t in tweets[:max_detail]:
+            try:
+                t['comments_list'] = _twitter_fetch_comments(t['url'])
+            except Exception as e:
+                add_diag(diag, failed=diag['failed'] + 1, errors=f"thread:{t.get('id','')}: {e}")
+            time.sleep(2)
+    else:
+        add_diag(diag, detail='xquik backend returns tweet matches without reply expansion')
 
     add_diag(diag, deduped=len(tweets), selected=len(tweets))
     if not tweets and diag['status'] == 'ok':
