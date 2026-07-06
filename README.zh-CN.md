@@ -6,7 +6,7 @@
 
 **注意：** Skill 在 Orkas 内外均可使用。Agent 在 Orkas 中可以直接运行，并获得对应的运行时、工具能力和路由行为；在 Orkas 外也可以作为提示词参考，或按需改造成其他 agent 框架的配置。
 
-Orkas 主页：https://orkas.ai<br>
+Orkas 主页：https://orkas.ai?source=github<br>
 Orkas 开源版本：https://github.com/Orkas-AI/Orkas
 
 当前目录包含：26 个 agent，45 个 skill。
