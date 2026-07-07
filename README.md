@@ -9,7 +9,7 @@ This project is a collection of high-quality Orkas agents and skills, continuous
 Orkas homepage: https://orkas.ai?source=github<br>
 Orkas open-source version: https://github.com/Orkas-AI/Orkas
 
-Current catalog: 26 agents and 45 skills.
+Current catalog: 26 agents and 46 skills.
 
 ## Category Overview
 
@@ -17,7 +17,7 @@ Current catalog: 26 agents and 45 skills.
 | --- | --- | ---: | ---: | --- |
 | [Education](#education) | `education/` | 6 | 8 | Teaching, tutoring, lesson planning, quizzes, and learning materials. |
 | [E-commerce](#e-commerce) | `ecommerce/` | 3 | 4 | Product listings, customer support, campaign planning, and store operations. |
-| [Product and Engineering](#product-and-engineering) | `product/` | 6 | 12 | PRDs, technical specs, user stories, release notes, and research workflows. |
+| [Product and Engineering](#product-and-engineering) | `product/` | 6 | 13 | PRDs, technical specs, user stories, release notes, and research workflows. |
 | [Creation](#creation) | `creation/` | 3 | 8 | Creative direction, drafting, editing, rewriting, visual concepting, and publishing workflows. |
 | [Data](#data) | `data/` | 4 | 6 | Data cleaning, spreadsheet analysis, SQL reasoning, metrics, and reports. |
 | [Office](#office) | `office/` | 4 | 7 | Documents, slides, meeting notes, email drafts, and daily productivity. |
@@ -236,6 +236,10 @@ Current catalog: 26 agents and 45 skills.
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td width="220" nowrap><a href="product/skills/ax-extract-workflow/"><strong>ax-extract-workflow</strong></a></td>
+      <td>Reconstruct the workflow behind a PR, feature, report, or other artifact from local ax sessions, commits, skill usage, and subagent activity.</td>
+    </tr>
     <tr>
       <td width="220" nowrap><a href="product/skills/github/"><strong>github</strong></a></td>
       <td>Use GitHub CLI for basic GitHub operations: inspect issues, pull requests, CI runs, releases, and GitHub API data. Use this whenever the user asks to list, view, create, update, or check GitHub repository data.</td>

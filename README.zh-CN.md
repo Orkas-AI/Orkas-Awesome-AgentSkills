@@ -9,7 +9,7 @@
 Orkas 主页：https://orkas.ai?source=github<br>
 Orkas 开源版本：https://github.com/Orkas-AI/Orkas
 
-当前目录包含：26 个 agent，45 个 skill。
+当前目录包含：26 个 agent，46 个 skill。
 
 ## 分类总览
 
@@ -17,7 +17,7 @@ Orkas 开源版本：https://github.com/Orkas-AI/Orkas
 | --- | --- | ---: | ---: | --- |
 | [教育](#教育) | `education/` | 6 | 8 | 教学、辅导、教案、题目生成、学习材料等。 |
 | [电商](#电商) | `ecommerce/` | 3 | 4 | 商品详情、客服话术、活动策划、店铺运营等。 |
-| [产研](#产研) | `product/` | 6 | 12 | PRD、技术方案、用户故事、发布说明、需求研究等。 |
+| [产研](#产研) | `product/` | 6 | 13 | PRD、技术方案、用户故事、发布说明、需求研究等。 |
 | [创作](#创作) | `creation/` | 3 | 8 | 创意策划、起草、润色、改写、视觉构思、发布流程等。 |
 | [数据](#数据) | `data/` | 4 | 6 | 数据清洗、表格分析、SQL 推理、指标解读、数据报告等。 |
 | [办公](#办公) | `office/` | 4 | 7 | 文档、幻灯片、会议纪要、邮件草稿、日常效率等。 |
@@ -236,6 +236,10 @@ Orkas 开源版本：https://github.com/Orkas-AI/Orkas
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td width="220" nowrap><a href="product/skills/ax-extract-workflow/"><strong>ax-extract-workflow</strong></a></td>
+      <td>从本地 ax 会话、提交记录、skill 使用和子代理活动中，还原 PR、功能、报告等交付物的产出流程。</td>
+    </tr>
     <tr>
       <td width="220" nowrap><a href="product/skills/github/"><strong>github</strong></a></td>
       <td>使用 GitHub CLI 进行基础 GitHub 操作：查询 issue、PR、CI run、release 和 GitHub API；适合用户要求列出、查看、创建、更新或检查 GitHub 仓库数据时使用。</td>
