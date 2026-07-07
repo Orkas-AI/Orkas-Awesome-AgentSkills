@@ -9,7 +9,7 @@
 Orkas 主页：https://orkas.ai?source=github<br>
 Orkas 开源版本：https://github.com/Orkas-AI/Orkas
 
-当前目录包含：26 个 agent，45 个 skill。
+当前目录包含：26 个 agent，48 个 skill。
 
 ## 分类总览
 
@@ -17,7 +17,7 @@ Orkas 开源版本：https://github.com/Orkas-AI/Orkas
 | --- | --- | ---: | ---: | --- |
 | [教育](#教育) | `education/` | 6 | 8 | 教学、辅导、教案、题目生成、学习材料等。 |
 | [电商](#电商) | `ecommerce/` | 3 | 4 | 商品详情、客服话术、活动策划、店铺运营等。 |
-| [产研](#产研) | `product/` | 6 | 12 | PRD、技术方案、用户故事、发布说明、需求研究等。 |
+| [产研](#产研) | `product/` | 6 | 15 | PRD、技术方案、用户故事、发布说明、需求研究等。 |
 | [创作](#创作) | `creation/` | 3 | 8 | 创意策划、起草、润色、改写、视觉构思、发布流程等。 |
 | [数据](#数据) | `data/` | 4 | 6 | 数据清洗、表格分析、SQL 推理、指标解读、数据报告等。 |
 | [办公](#办公) | `office/` | 4 | 7 | 文档、幻灯片、会议纪要、邮件草稿、日常效率等。 |
@@ -271,6 +271,18 @@ Orkas 开源版本：https://github.com/Orkas-AI/Orkas
     <tr>
       <td width="220" nowrap><a href="product/skills/product-ui/"><strong>product-ui</strong></a></td>
       <td>用于根据 PRD、产品目标、用户流程或现有应用上下文设计并实现产品 UI；适合&quot;做这个功能的界面&quot;&quot;实现一个前端页面&quot;&quot;把 PRD 转成 UI&quot;&quot;做一个像 Stripe/Linear/Vercel 的界面&quot;&quot;优化布局、组件、响应式和 A11y&quot;；触发词：产品UI、UI实现、前端界面、页面设计、组件设计、设计系统、品牌风格、响应式、A11y、视觉优化</td>
+    </tr>
+    <tr>
+      <td width="220" nowrap><a href="product/skills/routerbase-api-integration/"><strong>routerbase-api-integration</strong></a></td>
+      <td>将应用接入 <a href="https://routerbase.com/">routerbase</a> OpenAI 兼容模型网关，覆盖 SDK 迁移、base URL 配置、流式输出、tool calling、JSON mode 和安全 API Key 处理。</td>
+    </tr>
+    <tr>
+      <td width="220" nowrap><a href="product/skills/routerbase-model-routing/"><strong>routerbase-model-routing</strong></a></td>
+      <td>规划 <a href="https://routerbase.com/">routerbase</a> 模型选择、fallback 链路、成本敏感策略、延迟预算和 AI Agent 工作流上线验证。</td>
+    </tr>
+    <tr>
+      <td width="220" nowrap><a href="product/skills/routerbase-media-generation/"><strong>routerbase-media-generation</strong></a></td>
+      <td>构建 <a href="https://routerbase.com/">routerbase</a> 图片、音频、语音和视频生成流程，覆盖端点选择、重试轮询、资产管理和安全检查。</td>
     </tr>
     <tr>
       <td width="220" nowrap><a href="product/skills/skill-quality-tester/"><strong>skill-quality-tester</strong></a></td>

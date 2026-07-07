@@ -9,7 +9,7 @@ This project is a collection of high-quality Orkas agents and skills, continuous
 Orkas homepage: https://orkas.ai?source=github<br>
 Orkas open-source version: https://github.com/Orkas-AI/Orkas
 
-Current catalog: 26 agents and 45 skills.
+Current catalog: 26 agents and 48 skills.
 
 ## Category Overview
 
@@ -17,7 +17,7 @@ Current catalog: 26 agents and 45 skills.
 | --- | --- | ---: | ---: | --- |
 | [Education](#education) | `education/` | 6 | 8 | Teaching, tutoring, lesson planning, quizzes, and learning materials. |
 | [E-commerce](#e-commerce) | `ecommerce/` | 3 | 4 | Product listings, customer support, campaign planning, and store operations. |
-| [Product and Engineering](#product-and-engineering) | `product/` | 6 | 12 | PRDs, technical specs, user stories, release notes, and research workflows. |
+| [Product and Engineering](#product-and-engineering) | `product/` | 6 | 15 | PRDs, technical specs, user stories, release notes, and research workflows. |
 | [Creation](#creation) | `creation/` | 3 | 8 | Creative direction, drafting, editing, rewriting, visual concepting, and publishing workflows. |
 | [Data](#data) | `data/` | 4 | 6 | Data cleaning, spreadsheet analysis, SQL reasoning, metrics, and reports. |
 | [Office](#office) | `office/` | 4 | 7 | Documents, slides, meeting notes, email drafts, and daily productivity. |
@@ -271,6 +271,18 @@ Current catalog: 26 agents and 45 skills.
     <tr>
       <td width="220" nowrap><a href="product/skills/product-ui/"><strong>product-ui</strong></a></td>
       <td>Use to design and implement product UI from PRD, product goals, user flows, or existing app context.</td>
+    </tr>
+    <tr>
+      <td width="220" nowrap><a href="product/skills/routerbase-api-integration/"><strong>routerbase-api-integration</strong></a></td>
+      <td>Integrate applications with <a href="https://routerbase.com/">routerbase</a> as an OpenAI-compatible model gateway, including SDK migration, base URL setup, streaming, tool calling, JSON mode, and safe API key handling.</td>
+    </tr>
+    <tr>
+      <td width="220" nowrap><a href="product/skills/routerbase-model-routing/"><strong>routerbase-model-routing</strong></a></td>
+      <td>Plan <a href="https://routerbase.com/">routerbase</a> model selection, fallback chains, cost-aware policies, latency budgets, and rollout validation for AI agent workflows.</td>
+    </tr>
+    <tr>
+      <td width="220" nowrap><a href="product/skills/routerbase-media-generation/"><strong>routerbase-media-generation</strong></a></td>
+      <td>Build <a href="https://routerbase.com/">routerbase</a> image, audio, speech, and video generation workflows with endpoint selection, retries, polling, asset handling, and safety checks.</td>
     </tr>
     <tr>
       <td width="220" nowrap><a href="product/skills/skill-quality-tester/"><strong>skill-quality-tester</strong></a></td>
