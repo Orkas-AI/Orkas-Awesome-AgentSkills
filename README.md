@@ -9,7 +9,7 @@ This project is a collection of high-quality Orkas agents and skills, continuous
 Orkas homepage: https://orkas.ai?source=github<br>
 Orkas open-source version: https://github.com/Orkas-AI/Orkas
 
-Current catalog: 26 agents and 45 skills.
+Current catalog: 26 agents and 46 skills.
 
 ## Category Overview
 
@@ -19,7 +19,7 @@ Current catalog: 26 agents and 45 skills.
 | [E-commerce](#e-commerce) | `ecommerce/` | 3 | 4 | Product listings, customer support, campaign planning, and store operations. |
 | [Product and Engineering](#product-and-engineering) | `product/` | 6 | 12 | PRDs, technical specs, user stories, release notes, and research workflows. |
 | [Creation](#creation) | `creation/` | 3 | 8 | Creative direction, drafting, editing, rewriting, visual concepting, and publishing workflows. |
-| [Data](#data) | `data/` | 4 | 6 | Data cleaning, spreadsheet analysis, SQL reasoning, metrics, and reports. |
+| [Data](#data) | `data/` | 4 | 7 | Data cleaning, knowledge management, spreadsheet analysis, SQL reasoning, metrics, and reports. |
 | [Office](#office) | `office/` | 4 | 7 | Documents, slides, meeting notes, email drafts, and daily productivity. |
 | [General](#general) | `general/` | 0 | 0 | Research, translation, planning, summarization, and general assistance. |
 
@@ -427,6 +427,10 @@ Current catalog: 26 agents and 45 skills.
     <tr>
       <td width="220" nowrap><a href="data/skills/material-organizer/"><strong>material-organizer</strong></a></td>
       <td>Organize user-provided URLs, PDFs, Word documents, images, text snippets, or local folders with extraction, source tracing, knowledge cards, entity links, deduplication, classification, exception logs, and keyword indexes; For: &quot;organize these links&quot;, &quot;turn these materials into research notes&quot;, &quot;extract knowledge cards from this&quot;, &quot;organize my Downloads folder&quot;; Triggers: material organization, research notes, knowledge cards, personal knowledge flow, entity links, keyword index, folder cleanup</td>
+    </tr>
+    <tr>
+      <td width="220" nowrap><a href="data/skills/tree-ring-memory/"><strong>tree-ring-memory</strong></a></td>
+      <td>Use Tree Ring Memory for local-first AI agent memory lifecycle work: recall project memory before risky tasks, capture evidence-linked lessons, preserve scars, and manage privacy-safe remember, redact, audit, and forget workflows; For: &quot;remember this project decision&quot;, &quot;recall what we learned&quot;, &quot;redact or delete this memory&quot;; Triggers: Tree Ring Memory, agent memory, project memory, memory recall, evidence memory, redaction, forgetting, audit</td>
     </tr>
     <tr>
       <td width="220" nowrap><a href="data/skills/notion/"><strong>notion</strong></a></td>
