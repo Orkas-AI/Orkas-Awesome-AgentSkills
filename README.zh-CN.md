@@ -9,7 +9,7 @@
 Orkas 主页：https://orkas.ai?source=github<br>
 Orkas 开源版本：https://github.com/Orkas-AI/Orkas
 
-当前目录包含：26 个 agent，46 个 skill。
+当前目录包含：26 个 agent，45 个 skill。
 
 ## 分类总览
 
@@ -19,7 +19,7 @@ Orkas 开源版本：https://github.com/Orkas-AI/Orkas
 | [电商](#电商) | `ecommerce/` | 3 | 4 | 商品详情、客服话术、活动策划、店铺运营等。 |
 | [产研](#产研) | `product/` | 6 | 12 | PRD、技术方案、用户故事、发布说明、需求研究等。 |
 | [创作](#创作) | `creation/` | 3 | 8 | 创意策划、起草、润色、改写、视觉构思、发布流程等。 |
-| [数据](#数据) | `data/` | 4 | 7 | 数据清洗、知识管理、表格分析、SQL 推理、指标解读、数据报告等。 |
+| [数据](#数据) | `data/` | 4 | 6 | 数据清洗、表格分析、SQL 推理、指标解读、数据报告等。 |
 | [办公](#办公) | `office/` | 4 | 7 | 文档、幻灯片、会议纪要、邮件草稿、日常效率等。 |
 | [通用](#通用) | `general/` | 0 | 0 | 检索、翻译、规划、总结、决策辅助等通用任务。 |
 
@@ -427,10 +427,6 @@ Orkas 开源版本：https://github.com/Orkas-AI/Orkas
     <tr>
       <td width="220" nowrap><a href="data/skills/material-organizer/"><strong>material-organizer</strong></a></td>
       <td>整理用户已提供的链接、PDF、Word、图片、文本片段或本地目录，做要点提取、来源溯源、知识卡沉淀、实体关系、去重归类、异常记录和关键词索引；适合&quot;整理这些链接&quot;&quot;把这些资料整理成研究笔记&quot;&quot;从这段内容提取知识卡&quot;&quot;帮我整理下载目录&quot;；触发词：资料整理、批量整理、研究笔记、知识卡、个人知识流、实体关系、关键词索引、目录整理</td>
-    </tr>
-    <tr>
-      <td width="220" nowrap><a href="data/skills/tree-ring-memory/"><strong>tree-ring-memory</strong></a></td>
-      <td>使用 Tree Ring Memory 做本地优先的 AI Agent 记忆生命周期管理：在高风险任务前检索项目记忆，记录有证据的经验，保留失败 scar，处理隐私安全的记录、脱敏、审计和遗忘；适合&quot;记住这个项目决策&quot;&quot;回忆之前怎么处理的&quot;&quot;删除或脱敏这条记忆&quot;；触发词：Tree Ring Memory、agent memory、项目记忆、记忆检索、证据记忆、脱敏、遗忘、审计</td>
     </tr>
     <tr>
       <td width="220" nowrap><a href="data/skills/notion/"><strong>notion</strong></a></td>
