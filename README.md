@@ -9,19 +9,17 @@ This project is a collection of high-quality Orkas agents and skills, continuous
 Orkas homepage: https://orkas.ai?source=github<br>
 Orkas open-source version: https://github.com/Orkas-AI/Orkas
 
-Current catalog: 26 agents and 45 skills.
-
 ## Category Overview
 
-| Category | Directory | Agents | Skills | Scope |
-| --- | --- | ---: | ---: | --- |
-| [Education](#education) | `education/` | 6 | 8 | Teaching, tutoring, lesson planning, quizzes, and learning materials. |
-| [E-commerce](#e-commerce) | `ecommerce/` | 3 | 4 | Product listings, customer support, campaign planning, and store operations. |
-| [Product and Engineering](#product-and-engineering) | `product/` | 6 | 12 | PRDs, technical specs, user stories, release notes, and research workflows. |
-| [Creation](#creation) | `creation/` | 3 | 8 | Creative direction, drafting, editing, rewriting, visual concepting, and publishing workflows. |
-| [Data](#data) | `data/` | 4 | 6 | Data cleaning, spreadsheet analysis, SQL reasoning, metrics, and reports. |
-| [Office](#office) | `office/` | 4 | 7 | Documents, slides, meeting notes, email drafts, and daily productivity. |
-| [General](#general) | `general/` | 0 | 0 | Research, translation, planning, summarization, and general assistance. |
+| Category | Directory | Scope |
+| --- | --- | --- |
+| [Education](#education) | `education/` | Teaching, tutoring, lesson planning, quizzes, and learning materials. |
+| [E-commerce](#e-commerce) | `ecommerce/` | Product listings, customer support, campaign planning, and store operations. |
+| [Product and Engineering](#product-and-engineering) | `product/` | PRDs, technical specs, user stories, release notes, and research workflows. |
+| [Creation](#creation) | `creation/` | Creative direction, drafting, editing, rewriting, visual concepting, and publishing workflows. |
+| [Data](#data) | `data/` | Data cleaning, spreadsheet analysis, SQL reasoning, metrics, and reports. |
+| [Office](#office) | `office/` | Documents, slides, meeting notes, email drafts, and daily productivity. |
+| [General](#general) | `general/` | Research, translation, planning, summarization, and general assistance. |
 
 ## Education
 
