@@ -438,6 +438,10 @@ Orkas 开源版本：https://github.com/Orkas-AI/Orkas
       <td width="220" nowrap><a href="data/skills/social-data/"><strong>social-data</strong></a></td>
       <td>采集和分析社媒数据：抓取小红书、X/Twitter、Reddit、YouTube、Bilibili 的公开帖子，或分析用户提供的社媒/活动数据，计算参与率、CTR、ROI、成本指标、Top/Bottom 内容和下一轮实验建议；适合&quot;抓一下 Reddit 上的口碑&quot;&quot;分析这批小红书讨论&quot;&quot;算一下这次活动 ROI&quot;；触发词：社媒数据、舆情、口碑、热度、公开帖子、社媒分析、参与率、CTR、ROI、campaign performance</td>
     </tr>
+    <tr>
+      <td width="220" nowrap><a href="data/skills/xquik-data/"><strong>xquik-data</strong></a></td>
+      <td>使用 Xquik 规划和执行 X/Twitter 数据工作流：基于 REST API、OpenAPI、MCP、webhook 或 SDK 采集、监控和整理公开数据；适合&quot;用 Xquik 抓取这些帖子&quot;&quot;设计 Xquik 监控流程&quot;&quot;把 Xquik 结果整理成报告&quot;；触发词：Xquik、X 数据、X/Twitter 数据、MCP、OpenAPI、webhook、社媒监控、数据抽取</td>
+    </tr>
   </tbody>
 </table>
 
