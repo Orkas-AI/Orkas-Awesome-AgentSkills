@@ -438,6 +438,10 @@ Orkas open-source version: https://github.com/Orkas-AI/Orkas
       <td width="220" nowrap><a href="data/skills/social-data/"><strong>social-data</strong></a></td>
       <td>Fetch and analyze social media data: collect public posts from Xiaohongshu, X/Twitter, Reddit, YouTube, and Bilibili, or analyze user-provided social/campaign data to calculate engagement rate, CTR, ROI, cost metrics, top/bottom content, and next experiment recommendations; For: &quot;fetch Reddit reputation&quot;, &quot;analyze these Xiaohongshu discussions&quot;, &quot;calculate campaign ROI&quot;; Triggers: social data, sentiment, reputation, buzz, public posts, social analytics, engagement rate, CTR, ROI, campaign performance</td>
     </tr>
+    <tr>
+      <td width="220" nowrap><a href="data/skills/xquik-data/"><strong>xquik-data</strong></a></td>
+      <td>Plan and run Xquik-backed X/Twitter data workflows with REST API, OpenAPI, MCP, webhooks, or SDKs; For: &quot;collect these posts with Xquik&quot;, &quot;design an Xquik monitor workflow&quot;, &quot;turn Xquik results into a report&quot;; Triggers: Xquik, X data, X/Twitter data, MCP, OpenAPI, webhook, social monitoring, data extraction</td>
+    </tr>
   </tbody>
 </table>
 
