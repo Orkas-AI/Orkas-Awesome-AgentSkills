@@ -38,6 +38,7 @@ Do not use for:
 2. For fetch mode:
    - Follow `references/fetching.md`.
    - One platform per script call: `xhs`, `twitter`, `reddit`, `youtube`, or `bilibili`.
+   - For X/Twitter, use the default backend unless the user has set `XQUIK_API_KEY` and asks for Xquik.
    - Expand the user's topic into 3-8 short divergent keyword groups unless the user explicitly restricts keywords.
    - Report `diag.status`, failures, empty results, and platform dependency limits.
 
