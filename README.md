@@ -235,6 +235,10 @@ Orkas open-source version: https://github.com/Orkas-AI/Orkas
   </thead>
   <tbody>
     <tr>
+      <td width="220" nowrap><a href="product/skills/agent-qa/"><strong>agent-qa</strong></a></td>
+      <td>Author, validate, run, debug, and triage natural-language web and mobile regression tests with Agent QA; use its MCP tools when available, fall back to the CLI, and review run evidence before changing an application or test.</td>
+    </tr>
+    <tr>
       <td width="220" nowrap><a href="product/skills/github/"><strong>github</strong></a></td>
       <td>Use GitHub CLI for basic GitHub operations: inspect issues, pull requests, CI runs, releases, and GitHub API data. Use this whenever the user asks to list, view, create, update, or check GitHub repository data.</td>
     </tr>
