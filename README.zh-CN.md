@@ -235,6 +235,10 @@ Orkas 开源版本：https://github.com/Orkas-AI/Orkas
   </thead>
   <tbody>
     <tr>
+      <td width="220" nowrap><a href="product/skills/agent-qa/"><strong>agent-qa</strong></a></td>
+      <td>使用 Agent QA 编写、校验、运行、调试和分诊自然语言 Web 与移动端回归测试；优先使用其 MCP 工具，在 MCP 不可用时回退到 CLI，并在修改应用或测试前审查运行证据。</td>
+    </tr>
+    <tr>
       <td width="220" nowrap><a href="product/skills/github/"><strong>github</strong></a></td>
       <td>使用 GitHub CLI 进行基础 GitHub 操作：查询 issue、PR、CI run、release 和 GitHub API；适合用户要求列出、查看、创建、更新或检查 GitHub 仓库数据时使用。</td>
     </tr>
