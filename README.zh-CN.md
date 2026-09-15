@@ -355,6 +355,10 @@ Orkas 开源版本：https://github.com/Orkas-AI/Orkas
       <td>通过 Nano Banana / Gemini / Imagen 相关 provider 执行图像生成或编辑，处理 provider 选择、API key 检查、参考图上传确认、成本提示、输出下载和失败回退；适合“用 Nano Banana 生成一张图”“用 Gemini 图像模型编辑这张图”“对比 Atlas 和 Google 的生成成本”；触发词：Nano Banana、Gemini 图像、Imagen、Google 图像生成、Atlas Cloud、参考图编辑、图像 API</td>
     </tr>
     <tr>
+      <td width="220" nowrap><a href="creation/skills/runapi-cli/"><strong>runapi-cli</strong></a></td>
+      <td>安装并使用 RunAPI CLI 执行一次性的 AI 图片、视频、音乐、音频和模型 API 任务，包含命令发现、JSON 输入、任务等待、认证检查和输出处理；适合“用 RunAPI 生成图片”“调用 RunAPI CLI”“等待 RunAPI 任务完成”；触发词：RunAPI、AI 图片、AI 视频、音乐生成、音频生成、模型 API、CLI</td>
+    </tr>
+    <tr>
       <td width="220" nowrap><a href="creation/skills/social-publish/"><strong>social-publish</strong></a></td>
       <td>使用可见浏览器把已准备好的内容填入社媒平台后台，保存草稿或停在发布前确认页；支持标题、正文、标签、话题、图片、视频、封面、分类等字段；禁止自动点击最终发布；适合“保存成公众号草稿”“填到小红书草稿”“放进 X 发帖框但不要发布”；触发词：保存草稿、发稿、社媒发布、准备发布、公众号草稿、小红书草稿、发帖框、不要发布、agent-browser</td>
     </tr>

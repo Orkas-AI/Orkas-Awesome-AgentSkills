@@ -355,6 +355,10 @@ Orkas open-source version: https://github.com/Orkas-AI/Orkas
       <td>Execute Nano Banana / Gemini / Imagen-style image generation or editing through available providers, with provider selection, API-key checks, reference-image upload consent, cost notes, output download, and failure fallback.</td>
     </tr>
     <tr>
+      <td width="220" nowrap><a href="creation/skills/runapi-cli/"><strong>runapi-cli</strong></a></td>
+      <td>Install and use the RunAPI CLI for one-off AI image, video, music, audio, and model API jobs, with command discovery, JSON input, task waiting, authentication checks, and output handling.</td>
+    </tr>
+    <tr>
       <td width="220" nowrap><a href="creation/skills/social-publish/"><strong>social-publish</strong></a></td>
       <td>Use a visible browser to place prepared content into a social platform editor, save a draft, or stop at the pre-publish confirmation page. Supports title, body, tags, topics, images, videos, cover, category, and similar fields. Never clicks final publish automatically.</td>
     </tr>
