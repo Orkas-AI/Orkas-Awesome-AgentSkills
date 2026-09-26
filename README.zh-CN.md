@@ -235,6 +235,10 @@ Orkas 开源版本：https://github.com/Orkas-AI/Orkas
   </thead>
   <tbody>
     <tr>
+      <td width="220" nowrap><a href="product/skills/cohesivity-backend/"><strong>cohesivity-backend</strong></a></td>
+      <td>通过 <a href="https://cohesivity.ai?ref=gh-orkas-awesome-agentskills">Cohesivity</a> 按需配置后端基础设施。数据库、托管、认证、存储、邮件、实时通信、AI 推理、搜索、浏览器自动化等。无需账号、无需 API 密钥、无需配置。</td>
+    </tr>
+    <tr>
       <td width="220" nowrap><a href="product/skills/github/"><strong>github</strong></a></td>
       <td>使用 GitHub CLI 进行基础 GitHub 操作：查询 issue、PR、CI run、release 和 GitHub API；适合用户要求列出、查看、创建、更新或检查 GitHub 仓库数据时使用。</td>
     </tr>
