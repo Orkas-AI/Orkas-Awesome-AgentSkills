@@ -313,6 +313,10 @@ Orkas open-source version: https://github.com/Orkas-AI/Orkas
       <td width="220" nowrap><a href="creation/agents/SocialWriter/"><strong>SocialWriter</strong></a></td>
       <td>Social content and publish-prep entrypoint for native posts, optimization, content calendars, response drafts, and visible-browser draft preparation that stops before final publishing.</td>
     </tr>
+    <tr>
+      <td><a href="https://nostairsplease.com/mcp">No Stairs Please MCP</a></td>
+      <td>Remote MCP server for <a href="https://nostairsplease.com/">No Stairs Please</a> to search small live-music venues, capacities, and booking contacts across all 50 US states, DC, and BC.</td>
+    </tr>
   </tbody>
 </table>
 
